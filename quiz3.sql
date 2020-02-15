@@ -8,9 +8,9 @@
 
 -- ======== ANSWER ========
 SELECT
-	COUNT(*) / 2 AS cnt_mutual_friends
+  COUNT(*) / 2 AS cnt_mutual_friends
 FROM user_relationship r1
 INNER JOIN user_relationship r2
-	ON r1.friend2_id = r2.friend1_id
+  ON r1.friend2_id = r2.friend1_id
 WHERE r1.friend1_id = r2.friend2_id
 ;

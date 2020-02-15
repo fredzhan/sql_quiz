@@ -5,10 +5,10 @@
 DROP TABLE IF EXISTS transaction;
 
 CREATE TABLE transaction (
-	transanction_timestamp timestamp,
-	transaction_id int,
-	customer_id int,
-	product_id int
+  transanction_timestamp timestamp,
+  transaction_id int,
+  customer_id int,
+  product_id int
 );
 
 INSERT INTO transaction 
@@ -70,8 +70,8 @@ VALUES
 DROP TABLE IF EXISTS user_relationship;
 
 CREATE TABLE user_relationship (
-	friend1_id int,
-   friend2_id int
+  friend1_id int,
+  friend2_id int
 );
 
 INSERT INTO user_relationship

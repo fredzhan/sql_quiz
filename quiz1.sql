@@ -10,16 +10,16 @@
 -- ======== ANSWER ========
 WITH
 aggr_by_cust AS (
-	SELECT 
-  		customer_id,
-  		COUNT(*) AS freq
-   FROM transaction
-   GROUP BY 1
+  SELECT 
+	customer_id,
+	COUNT(*) AS freq
+  FROM transaction
+  GROUP BY 1
 )
 
 SELECT 
-	freq,
-	COUNT(*) AS cnt_customer
+  freq,
+  COUNT(*) AS cnt_customer
 FROM aggr_by_cust
 GROUP BY 1
 ORDER BY 1

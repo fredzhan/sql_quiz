@@ -10,27 +10,27 @@
 -- ======== ANSWER ========
 WITH
 aggr_by_cust AS (
-	SELECT 
-  		customer_id,
-  		COUNT(*) AS freq
-	FROM transaction
-	GROUP BY 1
+  SELECT 
+	customer_id,
+	COUNT(*) AS freq
+  FROM transaction
+  GROUP BY 1
 ),
 
 aggr_by_freq AS (
   SELECT 
-     freq,
-     COUNT(*) AS cnt_customer
+	freq,
+	COUNT(*) AS cnt_customer
   FROM aggr_by_cust
   GROUP BY 1
 )
 
 SELECT
-	t1.freq,
-	SUM(t2.cnt_customer) AS running_sum 
+  t1.freq,
+  SUM(t2.cnt_customer) AS running_sum 
 FROM aggr_by_freq t1
 LEFT JOIN aggr_by_freq t2
-	ON t2.freq <= t1.freq
+  ON t2.freq <= t1.freq
 GROUP BY 1
 ORDER BY 1
 ;
